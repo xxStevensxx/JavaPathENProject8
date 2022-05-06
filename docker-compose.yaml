@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  tourguides:
+    #environment:
+     # - name=value
+    context: ./TourGuide
+    dockerfile: Dockerfile
+
+  gpsutil:
+    #environment:
+     # - name=value
+    context: ./GpsUtil
+    dockerfile: Dockerfile
+    ports:
+      -8080:8080
+    restart: always 
+
+  rewardcentral:
+      #environment:
+     # - name=value
+    context: ./RewardCentral
+    dockerfile: Dockerfile
+
+  tripricer:
+      #environment:
+     # - name=value
+    context: ./TripPricer
+    dockerfile: Dockerfile
+ 
+
